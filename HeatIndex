@@ -1,0 +1,22 @@
+public class HeatIndex {
+
+    public static double BerekenHeatIndex(short TempInF, short LVTGH){
+
+        
+            double T                =  TempInF;
+            double Luchtvochtigheid = LVTGH;
+            
+            double Temp =  -42.379 + (2.04901523 * TempInF) + (10.14333127 * Luchtvochtigheid) - (0.22475541 * TempInF * Luchtvochtigheid) 
+                	   - (6.83783 * Math.pow(10,-3) * Math.pow(T,2)) - (5.481717 * Math.pow(10,-2) * Math.pow(Luchtvochtigheid,2)) 
+                	   + (1.22874 * Math.pow(10,-3) * Math.pow(T,2) * Luchtvochtigheid) + (8.5282 * Math.pow(10,-4) * TempInF * Math.pow(Luchtvochtigheid,2)) 
+                	   - (1.99 * Math.pow(10,-6) * Math.pow(T,2) * Math.pow(Luchtvochtigheid,2));
+            
+            
+            
+            return(Temp);
+    }
+    
+    public static void main(String[] args){
+        System.out.println("" + BerekenHeatIndex(80, 20) + "");
+    }
+}
